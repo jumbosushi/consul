@@ -1738,8 +1738,10 @@ Use these links to navigate to a particular top-level stanza.
 
     ```yaml
     namespaceSelector: |
-      matchLabels:
-        namespace-label: label-value
+      matchLabmatchExpressions:
+        - key: namespace-label
+          operator: In
+          values: ["label-value"]
     ```
 
   - `k8sAllowNamespaces` ((#v-connectinject-k8sallownamespaces)) (`array<string>: ["*"]`) - List of k8s namespaces to allow Connect sidecar
